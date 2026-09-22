@@ -425,9 +425,13 @@ main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(5) img {
 }
 
 /* article header row (4th section): 제목 on the left, 등록일 on the right,
-   with top/bottom rules — mirrors the source's title/date table row. */
-main > .section:nth-of-type(4) .default-content-wrapper > p:nth-child(1) {
+   with top/bottom rules — mirrors the source's title/date table row. The
+   wrapper is the positioning context so the absolute 등록일 aligns to the row. */
+main > .section:nth-of-type(4) .default-content-wrapper {
   position: relative;
+}
+
+main > .section:nth-of-type(4) .default-content-wrapper > p:nth-child(1) {
   margin: 0;
   padding: 12px 160px 12px 0;
   border-top: 1px solid var(--muted-border);
