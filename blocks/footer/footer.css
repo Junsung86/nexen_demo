@@ -1,20 +1,51 @@
+/* Footer — matches source nexentire.com: black background, light-grey links. */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #000;
+  color: #e5e5e5;
+  font-size: 14px;
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 30px 24px;
 }
 
 footer .footer p {
-  margin: 0;
+  margin: 0 0 6px;
+  color: #999;
+}
+
+/* policy / utility link row */
+footer .footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer a:any-link {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+footer .footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* company-info block (second section) sits below the links, muted grey */
+footer .footer > div > p:first-child {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 30px 32px;
   }
 }

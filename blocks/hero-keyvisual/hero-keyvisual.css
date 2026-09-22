@@ -1,41 +1,53 @@
+/*
+ * hero-keyvisual — full-bleed dark photographic banner with a centered white
+ * heading and a short divider bar beneath it.
+ * Values extracted from source .keyvisual (nexentire.com) computed styles.
+ * Background photo aspect ratio: 1920x300 (= 32/5 = 6.4:1).
+ */
+
+/* Full-bleed: escape the section content max-width. */
 .hero-keyvisual-container .hero-keyvisual-wrapper {
   max-width: unset;
   padding: 0;
 }
 
-/* Full-bleed hero: background image fills the block, content overlays centered. */
 .hero-keyvisual {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
-  padding: 64px 24px;
+  min-height: 160px;
+  padding: 32px 24px;
   overflow: hidden;
   text-align: center;
+  color: #fff;
 }
 
-/* Background image layer */
+/* Background photo layer (full-bleed, behind content). */
 .hero-keyvisual .hero-keyvisual-bg {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
+  margin: 0;
 }
 
 .hero-keyvisual .hero-keyvisual-bg picture {
   position: absolute;
   inset: 0;
+  display: block;
 }
 
 .hero-keyvisual .hero-keyvisual-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-/* Overlay content */
+/* Centered overlay content. */
 .hero-keyvisual .hero-keyvisual-content {
   position: relative;
+  z-index: 1;
   max-width: 1200px;
   width: 100%;
 }
@@ -45,34 +57,47 @@
 .hero-keyvisual .hero-keyvisual-content h3,
 .hero-keyvisual .hero-keyvisual-content p {
   margin: 0 auto;
-  color: var(--background-color);
+  color: #fff;
 }
 
-/* Short divider beneath the heading, matching the source key visual. */
+/* Heading — matches source: 48px / weight 400 / -0.6px tracking, white. */
+.hero-keyvisual .hero-keyvisual-content h1 {
+  margin: 0 auto;
+  padding-bottom: 25px;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+}
+
+/* Short white divider bar beneath the heading (source: 85x1px bar, centered). */
 .hero-keyvisual .hero-keyvisual-content h1::after {
   content: '';
   display: block;
-  width: 40px;
-  height: 2px;
-  margin: 24px auto 0;
-  background: currentcolor;
+  width: 85px;
+  height: 1px;
+  margin: 25px auto 0;
+  background: #fff;
 }
 
-/* No background image authored — render text on neutral background instead. */
+/* No background image authored — render text on the dark section background. */
 .hero-keyvisual.no-image {
   min-height: unset;
-}
-
-.hero-keyvisual.no-image .hero-keyvisual-content h1,
-.hero-keyvisual.no-image .hero-keyvisual-content h2,
-.hero-keyvisual.no-image .hero-keyvisual-content h3,
-.hero-keyvisual.no-image .hero-keyvisual-content p {
-  color: var(--text-color);
+  padding: 40px 24px;
 }
 
 @media (width >= 900px) {
   .hero-keyvisual {
-    min-height: 360px;
-    padding: 96px 32px;
+    min-height: 0;
+    padding: 0 32px;
+
+    /* height driven by the photo aspect ratio, as on the source */
+    aspect-ratio: 32 / 5;
+    max-height: 300px;
+  }
+
+  .hero-keyvisual .hero-keyvisual-content h1 {
+    font-size: 48px;
+    line-height: 52.8px;
   }
 }

@@ -10,7 +10,33 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  readBlockConfig,
 } from './aem.js';
+
+/**
+ * Applies Section Metadata to its parent section.
+ * The vendored aem.js decorateSections() does not consume `.section-metadata`
+ * blocks, so read each one here (before decorateSections runs), turn its
+ * `style` values into section classes (e.g. `dark`), copy any other key/value
+ * pairs onto the section dataset, and remove the block from the DOM.
+ * @param {Element} main The main element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll(':scope > div > .section-metadata').forEach((sectionMeta) => {
+    const section = sectionMeta.parentElement;
+    const meta = readBlockConfig(sectionMeta);
+    Object.keys(meta).forEach((key) => {
+      if (key === 'style') {
+        meta.style.split(',').map((s) => s.trim()).filter(Boolean).forEach((s) => {
+          section.classList.add(s.toLowerCase().replace(/\s+/g, '-'));
+        });
+      } else {
+        section.dataset[key.replace(/-([a-z])/g, (m, c) => c.toUpperCase())] = meta[key];
+      }
+    });
+    sectionMeta.remove();
+  });
+}
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -150,6 +176,7 @@ function decorateButtons(main) {
 export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
+  decorateSectionMetadata(main);
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);

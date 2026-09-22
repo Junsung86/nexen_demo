@@ -1,8 +1,12 @@
 {
-  "type": "doc",
+  "type": "da",
   "sites": {
     "nexen_demo": {
-      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+      "contentSource": {
+        "org": "Junsung86",
+        "repo": "nexen_demo"
+      }
     }
   }
 }
