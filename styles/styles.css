@@ -283,14 +283,15 @@ main .default-content-wrapper h2#news-title {
   color: var(--text-color);
 }
 
-/* previous / next article navigation */
-main .prev-next {
+/* previous / next article navigation (last section — class attrs are stripped
+   by the DA→md pipeline, so scope by section position instead of .prev-next). */
+main > .section:last-of-type .default-content-wrapper {
   position: relative;
   margin-top: 40px;
   border-top: 1px solid var(--muted-border);
 }
 
-main .prev-next p {
+main > .section:last-of-type .default-content-wrapper p {
   margin: 0;
   padding: 12px 0;
   border-bottom: 1px solid var(--muted-border);
@@ -298,11 +299,11 @@ main .prev-next p {
   font-size: 14px;
 }
 
-main .prev-next p:not(.button-container) a {
+main > .section:last-of-type .default-content-wrapper p a {
   color: var(--text-color);
 }
 
-main .prev-next p strong {
+main > .section:last-of-type .default-content-wrapper p strong {
   display: inline-block;
   min-width: 44px;
   margin-right: 16px;
@@ -310,18 +311,23 @@ main .prev-next p strong {
   font-weight: 400;
 }
 
-/* 목록보기 — Nexen purple outline button, top-right */
-main .prev-next .button-container {
+/* 목록보기 — a bare strong>a link renders as .button; make it a Nexen-purple
+   outline button, anchored top-right, and drop the label/border treatment. */
+main > .section:last-of-type .default-content-wrapper p.button-container {
+  position: absolute;
+  top: 0;
+  right: 0;
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-main .prev-next .button-container .button:any-link {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+main > .section:last-of-type .default-content-wrapper p.button-container strong {
+  min-width: 0;
+  margin: 0;
+}
+
+main > .section:last-of-type .default-content-wrapper .button:any-link {
   border: 1px solid var(--brand-purple);
   border-radius: 0;
   background: transparent;
@@ -331,7 +337,7 @@ main .prev-next .button-container .button:any-link {
   padding: 10px 28px;
 }
 
-main .prev-next .button-container .button:hover {
+main > .section:last-of-type .default-content-wrapper .button:hover {
   background: var(--brand-purple);
   color: #fff;
 }
