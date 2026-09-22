@@ -277,6 +277,54 @@ main img {
   width: 100%;
 }
 
+/* news heading + description (default content) */
+main .default-content-wrapper h2#news-title {
+  margin-bottom: 4px;
+  color: var(--text-color);
+}
+
+/* social share icons row */
+main p.sns-share {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+main p.sns-share a:any-link {
+  display: inline-flex;
+  line-height: 0;
+}
+
+main p.sns-share img {
+  width: 28px;
+  height: 28px;
+}
+
+/* previous / next article navigation */
+main .prev-next {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+main .prev-next p {
+  margin: 6px 0;
+  color: var(--text-color);
+}
+
+main .prev-next p strong {
+  display: inline-block;
+  min-width: 44px;
+  margin-right: 12px;
+  color: var(--muted-color);
+  font-weight: 500;
+}
+
+main .prev-next .button-container {
+  margin-top: 16px;
+}
+
 /* sections */
 main > .section {
   margin: 40px 0;

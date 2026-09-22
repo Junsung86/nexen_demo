@@ -155,8 +155,8 @@ header .nav-brand a:any-link {
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: auto;
+  height: 32px;
 }
 
 /* tools list reset (declared before deeper nav-sections rules for specificity order) */
