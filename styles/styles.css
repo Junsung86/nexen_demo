@@ -307,16 +307,18 @@ main > .section:nth-of-type(5) .default-content-wrapper p strong {
   display: inline-block;
   min-width: 44px;
   margin-right: 16px;
-  color: var(--muted-color);
+  color: var(--brand-purple);
   font-weight: 400;
 }
 
 /* 목록보기 — EDS renders the strong>a link as .button.primary in a
-   .button-wrapper; restyle it as a Nexen-purple outline button, top-right. */
+   .button-wrapper; restyle it as a Nexen-purple outline button, vertically
+   centered on the right of the prev/next rows. */
 main > .section:nth-of-type(5) .default-content-wrapper p.button-wrapper {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
+  transform: translateY(-50%);
   margin: 0;
   padding: 0;
   border: 0;
