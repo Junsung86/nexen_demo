@@ -289,6 +289,17 @@ header nav .nav-tools a:any-link {
   color: var(--text-color);
 }
 
+header nav .nav-tools .nav-search a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+header nav .nav-tools .nav-search img {
+  width: 21px;
+  height: 21px;
+}
+
 @media (width >= 900px) {
   header nav .nav-tools ul {
     display: flex;
