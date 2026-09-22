@@ -423,3 +423,33 @@ main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(5) img {
   width: 28px;
   height: 28px;
 }
+
+/* article header row (4th section): 제목 on the left, 등록일 on the right,
+   with top/bottom rules — mirrors the source's title/date table row. */
+main > .section:nth-of-type(4) .default-content-wrapper > p:nth-child(1) {
+  position: relative;
+  margin: 0;
+  padding: 12px 160px 12px 0;
+  border-top: 1px solid var(--muted-border);
+  border-bottom: 1px solid #414042;
+  color: var(--text-color);
+  font-size: 15px;
+}
+
+main > .section:nth-of-type(4) .default-content-wrapper > p:nth-child(2) {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  font-size: 14px;
+  text-align: right;
+}
+
+main > .section:nth-of-type(4) .default-content-wrapper > p:nth-child(1) strong,
+main > .section:nth-of-type(4) .default-content-wrapper > p:nth-child(2) strong {
+  margin-right: 12px;
+  color: var(--brand-purple);
+  font-weight: 400;
+}
