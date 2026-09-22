@@ -1,6 +1,7 @@
-/* header and nav layout */
+/* header and nav layout — dark bar to match nexentire.com (rgb(23,23,23)) */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: #171717;
+  color: #fff;
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -150,7 +151,7 @@ header .nav-brand {
 }
 
 header .nav-brand a:any-link {
-  color: var(--text-color);
+  color: #fff;
   white-space: nowrap;
 }
 
@@ -286,7 +287,7 @@ header nav .nav-tools {
 }
 
 header nav .nav-tools a:any-link {
-  color: var(--text-color);
+  color: #fff;
 }
 
 header nav .nav-tools .nav-search a {
@@ -310,10 +311,5 @@ header nav .nav-tools .nav-search img {
   /* wider spacing between top-level menu items, matching the source */
   header nav .nav-sections .default-content-wrapper > ul {
     gap: 32px;
-  }
-
-  /* subtle divider under the header bar */
-  header .nav-wrapper {
-    border-bottom: 1px solid #e5e5e5;
   }
 }
