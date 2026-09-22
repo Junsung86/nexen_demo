@@ -283,15 +283,15 @@ main .default-content-wrapper h2#news-title {
   color: var(--text-color);
 }
 
-/* previous / next article navigation (last section — class attrs are stripped
+/* previous / next article navigation (5th section — class attrs are stripped
    by the DA→md pipeline, so scope by section position instead of .prev-next). */
-main > .section:last-of-type .default-content-wrapper {
+main > .section:nth-of-type(5) .default-content-wrapper {
   position: relative;
   margin-top: 40px;
   border-top: 1px solid var(--muted-border);
 }
 
-main > .section:last-of-type .default-content-wrapper p {
+main > .section:nth-of-type(5) .default-content-wrapper p {
   margin: 0;
   padding: 12px 0;
   border-bottom: 1px solid var(--muted-border);
@@ -299,11 +299,11 @@ main > .section:last-of-type .default-content-wrapper p {
   font-size: 14px;
 }
 
-main > .section:last-of-type .default-content-wrapper p a {
+main > .section:nth-of-type(5) .default-content-wrapper p a {
   color: var(--text-color);
 }
 
-main > .section:last-of-type .default-content-wrapper p strong {
+main > .section:nth-of-type(5) .default-content-wrapper p strong {
   display: inline-block;
   min-width: 44px;
   margin-right: 16px;
@@ -311,9 +311,9 @@ main > .section:last-of-type .default-content-wrapper p strong {
   font-weight: 400;
 }
 
-/* 목록보기 — a bare strong>a link renders as .button; make it a Nexen-purple
-   outline button, anchored top-right, and drop the label/border treatment. */
-main > .section:last-of-type .default-content-wrapper p.button-container {
+/* 목록보기 — EDS renders the strong>a link as .button.primary in a
+   .button-wrapper; restyle it as a Nexen-purple outline button, top-right. */
+main > .section:nth-of-type(5) .default-content-wrapper p.button-wrapper {
   position: absolute;
   top: 0;
   right: 0;
@@ -322,12 +322,7 @@ main > .section:last-of-type .default-content-wrapper p.button-container {
   border: 0;
 }
 
-main > .section:last-of-type .default-content-wrapper p.button-container strong {
-  min-width: 0;
-  margin: 0;
-}
-
-main > .section:last-of-type .default-content-wrapper .button:any-link {
+main > .section:nth-of-type(5) .default-content-wrapper a.button.primary {
   border: 1px solid var(--brand-purple);
   border-radius: 0;
   background: transparent;
@@ -337,7 +332,8 @@ main > .section:last-of-type .default-content-wrapper .button:any-link {
   padding: 10px 28px;
 }
 
-main > .section:last-of-type .default-content-wrapper .button:hover {
+main > .section:nth-of-type(5) .default-content-wrapper a.button.primary:hover {
+  border-color: var(--brand-purple);
   background: var(--brand-purple);
   color: #fff;
 }
