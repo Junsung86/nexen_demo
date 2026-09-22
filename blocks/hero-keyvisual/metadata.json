@@ -1,0 +1,10 @@
+{
+  "variantName": "hero-keyvisual",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Full-bleed dark photographic background with a single centered heading overlaid in white and a short divider beneath it. Minimal — no subheading or CTA.",
+  "contentPattern": "One background image cell followed by a heading cell (single column, rows).",
+  "usage": "Page key-visual / banner at the top of a content page.",
+  "options": [],
+  "memberVariantIds": ["hero-keyvisual"]
+}

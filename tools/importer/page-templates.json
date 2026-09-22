@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "projectType": "doc"
+  },
+  "templates": [
+    {
+      "name": "news",
+      "urls": [
+        "https://www.nexentire.com/kr/media/news/1282283_1224.php"
+      ],
+      "representativeUrl": "https://www.nexentire.com/kr/media/news/1282283_1224.php",
+      "description": "News article detail page",
+      "urlPattern": "/kr/media/news/*",
+      "blocks": [
+        {
+          "name": "hero-keyvisual",
+          "instances": [
+            ".media-container > .keyvisual",
+            ".keyvisual"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "keyvisual-hero",
+          "name": "keyvisual-hero",
+          "selector": [
+            ".media-container > .keyvisual",
+            ".keyvisual"
+          ],
+          "style": "dark",
+          "blocks": [
+            "hero-keyvisual"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "news-section-heading",
+          "name": "news-section-heading",
+          "selector": [
+            ".media-cont > .media-title",
+            ".media-title"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".media-title"
+          ]
+        },
+        {
+          "id": "news-key-visual-image",
+          "name": "news-key-visual-image",
+          "selector": [
+            ".media-cont > .img_media",
+            ".img_media"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".img_media"
+          ]
+        },
+        {
+          "id": "article-body",
+          "name": "article-body",
+          "selector": [
+            ".media-cont > .media-board-list",
+            ".media-board-list"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".media-board-list"
+          ]
+        },
+        {
+          "id": "prev-next-nav",
+          "name": "prev-next-nav",
+          "selector": [
+            ".media-cont > .prev-next",
+            ".prev-next"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".prev-next"
+          ]
+        }
+      ]
+    }
+  ]
+}

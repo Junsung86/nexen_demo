@@ -1,0 +1,8 @@
+{
+  "type": "doc",
+  "sites": {
+    "nexen_demo": {
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}
