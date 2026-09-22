@@ -387,14 +387,17 @@ main .section.dark p {
 }
 
 /* news title section: title/description on the left, social icons top-right.
-   Scoped to the 2nd section so article-body images are unaffected. EDS splits
-   each social image link into its own <p>, so anchor them to the top-right. */
+   Structure is fixed: [h2, description p, social p, social p, social p], so
+   position the 3rd–5th paragraphs (the social icons) by child index. Avoids
+   :has() so it works in every browser regardless of :has() support. */
 main > .section:nth-of-type(2) .default-content-wrapper {
   position: relative;
   padding-bottom: 8px;
 }
 
-main > .section:nth-of-type(2) .default-content-wrapper p:has(> a > picture) {
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(3),
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(4),
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(5) {
   position: absolute;
   top: 4px;
   margin: 0;
@@ -402,19 +405,21 @@ main > .section:nth-of-type(2) .default-content-wrapper p:has(> a > picture) {
 }
 
 /* three icons placed in a right-aligned row */
-main > .section:nth-of-type(2) .default-content-wrapper p:has(> a > picture):nth-last-of-type(3) {
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(3) {
   right: 76px;
 }
 
-main > .section:nth-of-type(2) .default-content-wrapper p:has(> a > picture):nth-last-of-type(2) {
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(4) {
   right: 40px;
 }
 
-main > .section:nth-of-type(2) .default-content-wrapper p:has(> a > picture):nth-last-of-type(1) {
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(5) {
   right: 4px;
 }
 
-main > .section:nth-of-type(2) .default-content-wrapper p:has(> a > picture) img {
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(3) img,
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(4) img,
+main > .section:nth-of-type(2) .default-content-wrapper > p:nth-child(5) img {
   width: 28px;
   height: 28px;
 }
