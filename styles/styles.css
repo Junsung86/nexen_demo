@@ -283,24 +283,6 @@ main .default-content-wrapper h2#news-title {
   color: var(--text-color);
 }
 
-/* social share icons row */
-main p.sns-share {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-top: 12px;
-}
-
-main p.sns-share a:any-link {
-  display: inline-flex;
-  line-height: 0;
-}
-
-main p.sns-share img {
-  width: 28px;
-  height: 28px;
-}
-
 /* previous / next article navigation */
 main .prev-next {
   margin-top: 40px;
@@ -323,6 +305,20 @@ main .prev-next p strong {
 
 main .prev-next .button-container {
   margin-top: 16px;
+}
+
+/* social share icons row — EDS splits each image link into its own <p>,
+   so lay the icon-only link paragraphs out inline. Scoped to linked images
+   (a > picture) so standalone banner/article images are unaffected. */
+main .default-content-wrapper p:has(> a > picture) {
+  display: inline-block;
+  margin: 12px 6px 0 0;
+  line-height: 0;
+}
+
+main .default-content-wrapper p:has(> a > picture) img {
+  width: 28px;
+  height: 28px;
 }
 
 /* sections */
